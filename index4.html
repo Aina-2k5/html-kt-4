@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Интернет-магазин</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      padding: 20px;
+      background-color: #8f37c5;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #080808;
+      font-size: 2.5rem; /* ~40px, адаптивнее, чем 350% */
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product-card {
+      background-color: #b48acf;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+      .product-card img {
+      width: 100%;
+      max-height: 200px;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+    }
+    
+    .product-info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .product-info h3 {
+      font-size: 1.2em;
+      color: #111010;
+    }
+
+    .product-info p {
+      font-size: 1em;
+      color: #181718;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #0a0a0a;
+    }
+
+    .product-info button {
+      background-color: #733699;
+      color: #050505;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .product-info button:hover {
+      background-color: #9428c3;
+    }
+
+    /* =============== МОБИЛЬНЫЕ (до 768px) =============== */
+    @media (max-width: 768px) {
+      .product-card {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+      }
+
+      .product-card img {
+        width: 100%;
+        max-height: 200px;
+        margin-right: 0;
+        border-radius: 6px 6px 0 0;
+      }
+
+      .product-info {
+        padding: 10px;
+      }
+
+      .product-info h3 {
+        font-size: 1.4em;
+      }
+
+      .product-info p,
+      .price {
+        font-size: 1.1em;
+      }
+
+      .product-info button {
+        padding: 12px;
+        font-size: 1.1em;
+        width: 100%;
+      }
+    }
+
+    /* =============== ПЛАНШЕТЫ (769px – 1024px) =============== */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .product-card {
+        width: 48%;
+        padding: 15px;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .product-card img {
+      width: 100%;
+      max-height: 200px;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+    }
+
+      .product-info {
+        padding: 0;
+        flex: 1;
+      }
+
+      .product-info button {
+        width: auto;
+        padding: 10px 16px;
+        font-size: 1em;
+      }
+    }
+
+    /* =============== ДЕСКТОП (от 1025px) =============== */
+    @media (min-width: 1025px) {
+      .product-card {
+        width: 32%;
+        padding: 20px;
+        flex-direction: column;
+      }
+
+      .product-card img {
+        width: 100%;
+        max-height: 200px;
+        margin-right: 0;
+        border-radius: 6px 6px 0 0;
+      }
+
+      .product-info {
+        padding: 20px 0 0 0;
+      }
+
+      .product-info button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Наши товары</h1>
+  <div class="product-container">
+    <div class="product-card">
+      <img src="https://avatars.mds.yandex.net/i?id=1de901b1fbc95f4196553b745c26625fbad1d868-15408539-images-thumbs&n=13" alt="iPhone 15 Pro">
+      <div class="product-info">
+        <h3>Смартфон iPhone 15 Pro</h3>
+        <p>Диагональ 6,1 дюйма, камера 48 МП, 512 ГБ, цвет «титановый синий»</p>
+        <div class="price">Цена: 89 990 руб.</div>
+        <button>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://avatars.mds.yandex.net/i?id=9e0c38bb194224a2480d2e3297b1637d-5614297-images-thumbs&ref=rim&n=33&w=375&h=250" alt="Наушники">
+      <div class="product-info">
+        <h3>Беспроводные наушники</h3>
+        <p>Шумоподавление, наушники отслеживают положение головы, адаптируя звук, работают до 30 часов.</p>
+        <div class="price">Цена: 2 165 руб.</div>
+        <button>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://robot4home.ru/image/cache/catalog/haylou-ls11/ls11-4-1000x1000.jpg" alt="Смарт-часы">
+      <div class="product-info">
+        <h3>Смарт-часы Xiaomi Haylou RS4 Plus</h3>
+        <p>Диагональ 1,78 дюйма, датчик движения, датчик сердцебиения, Bluetooth 5.1, 105 режимов.</p>
+        <div class="price">Цена: 4 956 руб.</div>
+        <button>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://avatars.mds.yandex.net/i?id=7238c2c84c1efa8bf15d66791d291622137d4906-5235444-images-thumbs&n=13" alt="Колонка">
+      <div class="product-info">
+        <h3>Портативная колонка Perfeo</h3>
+        <p>Мощность 14 Вт, диагностика воспроизводимых частот 85–16000 Гц, зарядка держится до 6 часов.</p>
+        <div class="price">Цена: 3 212 руб.</div>
+        <button>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://avatars.mds.yandex.net/i?id=de37e4c47054dcdb6749b69a0d4f1291cc9a0d8e-5255429-images-thumbs&n=13" alt="Электроскутер">
+      <div class="product-info">
+        <h3>Электроскутер CityCoco</h3>
+        <p>Скорость — до 60 км/ч, расстояние — от 50 до 100 км, до 100 км на одном заряде.</p>
+        <div class="price">Цена: 81 900 руб.</div>
+        <button>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://coffee-mashiny.ru/uploads/product/100/118/Jura-X6-Dark-Inox_2019-11-06_10-46-54.jpg" alt="Кофемашина">
+      <div class="product-info">
+        <h3>Кофемашина автомат</h3>
+        <p>Объём бункера для воды: 5 л, давление насоса: 15 бар, напряжение питания: 220 В, мощность: 2,7 кВт.</p>
+        <div class="price">Цена: 707 990 руб.</div>
+        <button>В корзину</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
